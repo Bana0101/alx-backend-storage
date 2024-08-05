@@ -108,5 +108,8 @@ class Cache():
         return self.get(key, int)
 
     def get_str(self, key):
+        """
+        Function to display the history
+        """
         value = self._redis.get(key)
         return value.decode("utf-8")
