@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+""" module docummentation """
 import requests
 import time
 from functools import wraps
@@ -8,6 +9,9 @@ cache: Dict[str, str] = {}
 
 
 def get_page(url: str) -> str:
+    """
+    A function to get the page
+    """
     if url in cache:
         print(f"Retrieving from cache: {url}")
         return cache[url]
@@ -20,6 +24,9 @@ def get_page(url: str) -> str:
 
 
 def cache_with_expiration(expiration: int):
+    """
+    A function that cache with expiration
+    """
     def decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
